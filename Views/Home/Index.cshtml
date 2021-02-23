@@ -1,0 +1,251 @@
+﻿@model Reviews
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        /*select, label {
+            display: inline-block;
+        }*/
+        select.form-control {
+            display: inline-block;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" asp-action="Index">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div style="text-align:left; width:700px;">
+            <div class="form-group" style="width:700px;">
+                <h5 style="font-size:13px;"><strong>Employee Name:</strong> Washington Leon-Jordan</h5>
+                <h5 style="font-size:13px;"><strong>Reviewer:</strong> Andrew Weis</h5>
+                <p> <strong style="display:inline-block;">Evaluate and discuss your job performance:</strong>Base your evaluation upon the position requirements, achievement of 2019 goals and assessment of key areas of your performance. If you did not participate last year, and no goals have been expressly communicated to you, please answer based on your best understanding of what your role is or ask for assistance from your team lead.</p>
+                <p><strong style="color:darkcyan;">Technical Competency:</strong>   How are you technically in technologies or processes ( e.g. C#, Javascript, knockout.JS, QA, Project Management, Production Support etc.)  that mater to innRoad based on your area of expertise: (e.g. Backend, Frontend, Quality Assurance, Management)</p>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <label>Employee Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="Technical_EmployeeRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Technical_EmployeeRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="Technical_ReviewerExplanation"></textarea>
+                <span asp-validation-for="Technical_ReviewerExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="Technical_ReviewerRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Technical_ReviewerRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="Technical_ReviewerExplanation"></textarea>
+                <span asp-validation-for="Technical_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Communication Skills:</strong> How is your communication with your teammates? Do you provide clear and to the point answers to questions? Are you often asked to repeat yourself?  Do you avoid long drawn responses? Does the questioner asks you the same question after your response</p>
+                <label>Employee Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="Communication_EmployeeRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Communication_EmployeeRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="Communication_EmployeeExplanation"></textarea>
+                <span asp-validation-for="Communication_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="Communication_ReviewerRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Communication_ReviewerRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="Communication_ReviewerExplanation"></textarea>
+                <span asp-validation-for="Communication_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Remote and International Leadership Capabilities:</strong>Your ability to lead people who are outside of your country or local office.<br /> We can’t hire fast enough locally. innRoad key to success is its ability to work with and empower people outside of the HYD and<br /> NYC offices and across international borders. Nearly 60% of our workforce is remote. This is a skill that going forward we will cultivate and measure as we share traditional NYC based international leadership tasks to other locations.&nbsp; You don’t have to a team leader or manager to make a profound impact to our remote operations. </p>
+                <label>Employee Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="InternationalLeadership_EmployeeRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="InternationalLeadership_EmployeeRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="InternationalLeadership_EmployeeExplanation"></textarea>
+                <span asp-validation-for="InternationalLeadership_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="InternationalLeadership_ReviewerRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="InternationalLeadership_ReviewerRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="InternationalLeadership_ReviewerExplanation"></textarea>
+                <span asp-validation-for="InternationalLeadership_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Adherence to organizational procedures:</strong> Attendance, start and end at expected times, reponsive during working hours, proactive comunication when away during working hours, minimize last minute PTOs, follow innRoad Employee Policies Manual</p>
+                <label>Employee Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="OrganizationalProcedures_EmployeeRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="OrganizationalProcedures_EmployeeRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="OrganizationalProcedures_EmployeeExplanation"></textarea>
+                <span asp-validation-for="OrganizationalProcedures_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="OrganizationalProcedures_ReviewerRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="OrganizationalProcedures_ReviewerRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="OrganizationalProcedures_ReviewerExplanation"></textarea>
+                <span asp-validation-for="OrganizationalProcedures_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Understanding and commitment to the objectives of the engineering team:</strong>  Does your daily work reflects the priority of the business: Delivery visible results as fast as possible. Does your judgment reflects pragmatic solutions to our business problems</p>
+                <label>Employee Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="CommitmentObjectives_EmployeeRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Communication_EmployeeRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="CommitmentObjectives_EmployeeExplanation"></textarea>
+                <span asp-validation-for="CommitmentObjectives_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback:</label>
+                <select style="width:180px; height:40px;" asp-for="CommitmentObjectives_ReviewerRating" class="form-control">
+                    <option disabled selected>Select Rating</option>
+                    <option value="1">Meet Expectations</option>
+                    <option value="2">Exceed Expectations</option>
+                    <option value="3">Need Improvement</option>
+                </select>
+                <span asp-validation-for="Communication_ReviewerRating" class="text-danger"></span>
+                <br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="CommitmentObjectives_ReviewerExplanation"></textarea>
+                <span asp-validation-for="CommitmentObjectives_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Talk about your achievements on your goals defined in 2019:</strong>If you had a review last year, copy and paste your goals here from 2019 and provide feedback for each item.</p>
+                <label>Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AchievementsOnGoalsLastYear_EmployeeExplanation"></textarea>
+                <span asp-validation-for="AchievementsOnGoalsLastYear_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AchievementsOnGoalsLastYear_ReviewerExplanation"></textarea>
+                <span asp-validation-for="AchievementsOnGoalsLastYear_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Employee Strengths:</strong>Discuss areas in which you excel and/or examples of exceptional performance. Pick the three most important items</p>
+                <label>Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="EmployeeStrengths_EmployeeExplanation"></textarea>
+                <span asp-validation-for="EmployeeStrengths_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="EmployeeStrengths_ReviewerExplanation"></textarea>
+                <span asp-validation-for="EmployeeStrengths_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Areas for improvement:</strong>Discuss areas where you can benefit from coaching or a development plan. Pick the three most important items</p>
+                <label>Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AreasImprovement_EmployeeExplanation"></textarea>
+                <span asp-validation-for="AreasImprovement_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AreasImprovement_ReviewerExplanation"></textarea>
+                <span asp-validation-for="AreasImprovement_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <span><strong style="color:darkcyan;">Provide a JIRA report  link to the list of tickets that you participated in 2020</strong></span>
+                <input asp-for="JIRAReportLink" style="width:680px;" />
+                <span asp-validation-for="JIRAReportLink" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">2020 Goals/Development Plan:</strong>State and discuss your expectations and goals for 2021</p>
+                <label>Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="ThisYearGoals_EmployeeExplanation"></textarea>
+                <span asp-validation-for="ThisYearGoals_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="ThisYearGoals_ReviewerExplanation"></textarea>
+                <span asp-validation-for="ThisYearGoals_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan;">Additional Comments</strong>(Optional):</p>
+                <label>Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AdditionalComments_EmployeeExplanation"></textarea>
+                <span asp-validation-for="AdditionalComments_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="AdditionalComments_ReviewerExplanation"></textarea>
+                <span asp-validation-for="AdditionalComments_ReviewerExplanation" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:700px;">
+                <p><strong style="color:darkcyan; font-size:14px;">I would like to be considered for promotion this year</strong>(Optional):</p>
+                <select style="width:170px;" asp-for="ConsiderForPromotion">
+                    <option disabled selected>Select Promotion</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                    <option value="3">Next Year</option>
+                </select>
+                <span asp-validation-for="ConsiderForPromotion" class="text-danger"></span><br />
+                <br />
+                <span><strong style="color:darkcyan;">Please provide a brief write up on why you think you should be consider for this promotion</strong></span>
+                <label class="pt-3">Employee Feedback</label><br />
+                <span class="small">Write a short explanation for your selection:</span>
+                <textarea rows="3" cols="91" asp-for="Promotion_EmployeeExplanation"></textarea>
+                <span asp-validation-for="Promotion_EmployeeExplanation" class="text-danger"></span><br />
+                <label>Reviewer Feedback</label><br />
+                <p>Do you agree with a promotion provide reason for either yes or not and how can the employee achieve your recomendation in the future if the answer is no</p>
+                <textarea rows="3" cols="91" asp-for="Promotion_ReviewerExplanation"></textarea>
+                <span asp-validation-for="Promotion_ReviewerExplanation" class="text-danger"></span>
+                <p class="pt-3">Please note a number of factors affect promotion yet two are the most important, does the organization belives you are performing at the  level you want to be promoted to, does the organization currently has space for someone in that role.</p>
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit" asp-action="Index"/>
+    </form>
+</body>
+</html>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
